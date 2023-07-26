@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.anyline.examples.cordova" version="47.1.0" ios-CFBundleVersion="1"
     xmlns="http://www.w3.org/ns/widgets"
-    xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    xmlns:cdv="http://cordova.apache.org/ns/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <name>Anyline Cordova Example</name>
     <preference name="deployment-target" value="12.0" />
     <preference name="SwiftVersion" value="4.2" />
@@ -33,6 +34,9 @@
     <content src="index.html" />
     <access origin="*" />
     <platform name="android">
+        <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+            <application android:extractNativeLibs="true"/>
+        </edit-config>
         <icon src="www/img/ic_launcher.png" />
     </platform>
     <platform name="ios">
