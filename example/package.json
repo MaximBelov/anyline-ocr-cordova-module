@@ -4,6 +4,8 @@
   "description": "Cordova plugin for implementing Anyline",
   "main": "index.js",
   "scripts": {
+    "minSdkVersion-21": "source $HOME/.nvm/nvm.sh; nvm use 20; rm -rf {platforms,plugins,package-lock.json}; npm i; cordova platform add android; cordova build android -- --gradleArg=-PcdvMinSdkVersion=21; du -h platforms/android/app/build/outputs/apk/debug/app-debug.apk",
+    "minSdkVersion-24": "source $HOME/.nvm/nvm.sh; nvm use 20; rm -rf {platforms,plugins,package-lock.json}; npm i; cordova platform add android; cordova build android -- --gradleArg=-PcdvMinSdkVersion=24; du -h platforms/android/app/build/outputs/apk/debug/app-debug.apk",
     "test": "echo \"Error: no test specified\" && exit 1",
     "addPlugins": "cordova plugin add cordova-plugin-android-permissions && cordova plugin add cordova-plugin-device && cordova plugin add ../plugin",
     "reinstall": "cordova platform remove android && cordova plugin remove io-anyline-cordova && cordova platform add android@latest && yarn addPlugins",

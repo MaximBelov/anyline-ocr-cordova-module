@@ -13,6 +13,9 @@
     <preference name="hostname" value="localhost" />
     <preference name="GradlePluginKotlinEnabled" value="true" />
     <preference name="GradlePluginKotlinVersion" value="1.8.0" />
+<!--    <preference name="android-minSdkVersion" value="21" />-->
+    <preference name="android-compileSdkVersion" value="33" />
+    <preference name="android-targetSdkVersion" value="33" />
 
     <allow-navigation href="http://app/*"/>
     <allow-navigation href="https://app/*"/>
@@ -21,23 +24,11 @@
 
     <!-- Requested by cordova-plugin-file for Android -->
     <preference name="AndroidPersistentFileLocation" value="Internal" />
-
-    <!-- To decrease the size of the SDK, list down the modules (separated by colons) to be
-        kept with the app bundle in the value of key below, all others will be removed. If
-        this value is empty, all modules are untouched.
-        
-        The following modules can be removed:
-        - module_anyline_ocr
-        - module_barcode
-        - module_document
-        - module_energy
-        - module_id
-        - module_license_plate
-        - module_tire
-
-        Example: value="module_energy:module_id:module_anyline_ocr"
-    -->
-    <preference name="anyline-retain-assets-pattern" value="" />
+    <preference name="anyline-retain-assets-pattern" value="module_barcode" />
+    <!-- For version < 43 -->
+    <preference name="anyline-ignore-assets-pattern" value="module_energy:module_id:module_anyline_ocr:module_document:module_license_plate:module_tire" />
+    <!-- For version 46-custom  -->
+    <preference name="anyline-android-ignore-assets-pattern" value="module_energy:module_id:module_anyline_ocr:module_document:module_license_plate:module_tire" />
 
     <content src="index.html" />
     <access origin="*" />
